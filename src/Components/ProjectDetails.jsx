@@ -26,10 +26,8 @@ const TECH_ICONS = {
     CSS: Code,
     default: Package,
 };
-interface TechBadgeProps {
-    tech: keyof typeof TECH_ICONS ;
-}
-const TechBadge:React.FC<TechBadgeProps> = ({ tech }) => {
+
+const TechBadge = ({ tech }) => {
     const Icon = TECH_ICONS[tech] || TECH_ICONS["default"];
 
     return (
@@ -265,7 +263,7 @@ const ProjectDetails = () => {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 @keyframes blob {
                     0% {
                         transform: translate(0px, 0px) scale(1);
