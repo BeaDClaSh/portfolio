@@ -11,7 +11,6 @@ interface CardProjectProps{
 }
 
 const CardProject:React.FC<CardProjectProps> = ({ Img, Title, Description, Link: ProjectLink, id }) => {
-    // Handle kasus ketika ProjectLink kosong
     const handleLiveDemo = (e:ChangeEvent) => {
         if (!ProjectLink) {
             console.log("no ProjectLink!");

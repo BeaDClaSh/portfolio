@@ -136,7 +136,7 @@ const ContactPage: React.FC = () => {
                         </div>
 
                         <form
-                            action="https://formsubmit.co/el/bilevo"
+                            action="https://formsubmit.co/astrasadm@gmail.com"
                             method="POST"
                             onSubmit={handleSubmit}
                             className="space-y-6"
