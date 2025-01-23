@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
-import { getDocs, addDoc, collection, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase-comment';
-import { MessageCircle, UserCircle2, Loader2, AlertCircle, Send, ImagePlus, X } from 'lucide-react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
+import {addDoc, collection, onSnapshot, orderBy, query, serverTimestamp} from 'firebase/firestore';
+import {db} from '../firebase-comment';
+import {AlertCircle, ImagePlus, Loader2, MessageCircle, Send, UserCircle2, X} from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -206,12 +205,29 @@ const Komentar = () => {
             setComments(commentsData);
         });
     }, []);
-
     const uploadImage = useCallback(async (imageFile) => {
         if (!imageFile) return null;
-        const storageRef = ref(storage, `profile-images/${Date.now()}_${imageFile.name}`);
-        await uploadBytes(storageRef, imageFile);
-        return getDownloadURL(storageRef);
+
+        const formData = new FormData();
+        formData.append('image', imageFile);
+
+        try {
+            const response = await fetch('https://api.imgbb.com/1/upload?key=b9b6966c43e7e2855e76bf111ad8af63', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                return data.data.url;
+            } else {
+                console.error('Ошибка загрузки на ImgBB:', data.error);
+                return null;
+            }
+        } catch (error) {
+            console.error('Ошибка при загрузке на ImgBB:', error);
+            return null;
+        }
     }, []);
 
     const handleCommentSubmit = useCallback(async ({ newComment, userName, imageFile }) => {
