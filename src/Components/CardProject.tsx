@@ -14,7 +14,7 @@ const CardProject:React.FC<CardProjectProps> = ({ Img, Title, Description, Link:
     // Handle kasus ketika ProjectLink kosong
     const handleLiveDemo = (e:ChangeEvent) => {
         if (!ProjectLink) {
-            console.log("ProjectLink kosong");
+            console.log("no ProjectLink!");
             e.preventDefault();
             alert("Live demo link is not available");
         }
@@ -22,7 +22,7 @@ const CardProject:React.FC<CardProjectProps> = ({ Img, Title, Description, Link:
 
     const handleDetails = (e) => {
         if (!id) {
-            console.log("ID kosong");
+            console.log("no ID!");
             e.preventDefault();
             alert("Project details are not available");
         }

@@ -205,8 +205,7 @@ export default function FullWidthTabs() {
           </span>
                 </h2>
                 <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-                    Explore my journey through projects, certifications, and technical expertise.
-                    Each section represents a milestone in my continuous learning path.
+                   Here you can see my project, certificates, and technologies which I used in my projects, every project help me soo much in my education
                 </p>
             </div>
 
