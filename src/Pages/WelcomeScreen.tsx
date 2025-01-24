@@ -70,7 +70,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onLoadingComplete }) => {
             setTimeout(() => {
                 onLoadingComplete?.(); // вызываем onLoadingComplete, если он передан
             }, 1000);
-        }, 4000);
+        }, 7000);
 
         return () => clearTimeout(timer);
     }, [onLoadingComplete]);
