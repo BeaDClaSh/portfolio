@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import React, {useState} from 'react';
+import type {Dispatch,FC} from 'react';
 import "./index.css";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -10,13 +10,16 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./Components/ProjectDetails.jsx";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import {AnimatePresence} from 'framer-motion';
+import React,{useState} from "react";
 
 interface LoadingPageProps {
     showWelcome: boolean;
-    setShowWelcome: React.Dispatch<React.SetStateAction<boolean>>;
+    setShowWelcome: Dispatch<React.SetStateAction<boolean>>;
 }
 
-const LoadingPage: React.FC<LoadingPageProps> = ({ showWelcome, setShowWelcome }) => {
+const LoadingPage: FC<LoadingPageProps> = ({ showWelcome, setShowWelcome }) => {
+    const year = new Date().getFullYear()
+
     return (
         <>
             <AnimatePresence mode="wait">
@@ -36,7 +39,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ showWelcome, setShowWelcome }
                         <center>
                             <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
                             <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-                © 2025{" "}
+                © {year+" "}
                                 <a href="https://flowbite.com/" className="hover:underline">
                   Slysl™
                 </a>
@@ -51,14 +54,17 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ showWelcome, setShowWelcome }
 };
 
 
-const ProjectPageLayout = () => (
+const ProjectPageLayout = () => {
+    const year = new Date().getFullYear()
+
+    return(
     <>
         <ProjectDetails />
         <footer>
             <center>
                 <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
                 <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-          © 2025{" "}
+          © {year+"  "}
                     <a href="https://flowbite.com/" className="hover:underline">
             Slysl
           </a>
@@ -67,7 +73,7 @@ const ProjectPageLayout = () => (
             </center>
         </footer>
     </>
-);
+)};
 
 function App() {
     const [showWelcome, setShowWelcome] = useState(true);

@@ -70,11 +70,11 @@ const ProfileImage = memo(() => (
 
 interface StatCardProps {
     icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; // Для компонента иконки
-    color: string; // Цвет (например, классы tailwind)
-    value: string | number; // Значение статистики
-    label: string; // Метка
-    description: string; // Описание
-    animation: string; // Анимация (например, "fade-up", "flip-left" и т.д.)
+    color: string;
+    value: string | number;
+    label: string;
+    description: string;
+    animation: string;
 }
 
 const StatCard = memo(({ icon: Icon, color, value, label, description, animation }:StatCardProps) => (
@@ -224,7 +224,7 @@ const AboutPage = () => {
                             data-aos="fade-right"
                             data-aos-duration="1500"
                         >
-                            Hello, I'm Stefan Loish (Slysl), I'm a fullstack developer which focused in searching best exists  from hard situations in Web developing.I'm prefer work in Frontend but also know a lot of information about backend, You can see my projects, certificates, and tech stack on this site
+                            Hello, I'm Stefan Loish (Slysl), I'm a fullstack developer which focused in searching best solution  from hard situations in Web developing.I'm prefer work in Next.js frontend and backend created using Nest, You can see my projects, certificates, and tech stack on this site
                         </p>
 
                         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">

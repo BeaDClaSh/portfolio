@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useEffect, useState} from "react"
-import {ExternalLink, Github, Instagram, Linkedin, Mail, Sparkles} from "lucide-react"
+import { ExternalLink, Github, Instagram, Linkedin, Mail, Sparkles} from "lucide-react"
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -92,9 +92,9 @@ const PAUSE_DURATION = 2000;
 const WORDS = ["Network & Programming Lover", "FullStack Developer"];
 const TECH_STACK = ["React", "Typescript", "Node.js", "Bun.sh",];
 const SOCIAL_LINKS = [
-    { icon: Github, link: "https://github.com/BeaDClaSh" },
+    { icon: Github, link: "https://github.com/Sly-SL" },
     { icon: Linkedin, link: "https://www.linkedin.com/in/stefan-loish-965809347" },
-    { icon: Instagram, link: "https://www.instagram.com/azrael2137/" }
+    { icon: Instagram, link: "https://www.instagram.com/_slysl_/" }
 ];
 
 const Home = () => {
