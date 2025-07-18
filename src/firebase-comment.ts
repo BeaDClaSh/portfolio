@@ -4,8 +4,8 @@ import {getStorage} from "firebase/storage";
 import {addDoc, collection} from "@firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD5zNiPYLoWsrCBGCGlQAzXgquFBKXOLJ0",
-    authDomain: "portfolio-2c9aa.firebaseapp.com",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
     projectId: "portfolio-2c9aa",
     storageBucket: "portfolio-2c9aa.firebasestorage.app",
     messagingSenderId: "524084746588",
